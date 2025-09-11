@@ -18,8 +18,13 @@ spec:
         - image: bootdotdev/synergychat-api:latest
           name: synergychat-api
           env:
-            - name: API_PORT
+            - name: CRAWLER_PORT_2
               valueFrom:
                 configMapKeyRef:
                   name: synergychat-api-configmap
                   key: API_PORT
+            - name: API_DB_FILEPATH
+              valueFrom:
+                configMapKeyRef:
+                  name: synergychat-api-configmap
+                  key: API_DB_FILEPATH
